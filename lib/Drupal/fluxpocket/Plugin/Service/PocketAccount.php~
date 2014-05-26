@@ -1,0 +1,83 @@
+<?php
+
+/**
+ * @file
+ * Contains LinkedInAccount.
+ */
+
+namespace Drupal\fluxpocket\Plugin\Service;
+
+use Drupal\fluxpocket\PocketClient;
+use Drupal\fluxservice\Service\OAuthAccountBase;
+
+/**
+ * Account plugin implementation for LinkedIn.
+ */
+class PocketAccount extends OAuthAccountBase implements PocketAccountInterface {
+
+  /**
+   * Defines the plugin.
+   */
+  public static function getInfo() {
+    return array(
+      'name' => 'fluxpocket',
+      'label' => t('Pocket account'),
+      'description' => t('Provides Pocket integration for fluxkraft.'),
+      'class' => '\Drupal\fluxpocket\Plugin\ServiceAccount\PocketAccountHandler',
+      'service' => 'fluxpocket',
+    );
+  }
+
+  /**
+   * The service base url.
+   *
+   * @var string
+   */
+  protected $serviceUrl = 'http://localhost/umar/testing';
+
+  /**
+   * {@inheritdoc}
+   */
+  public function client() {
+    $service = $this->getService();
+    return LinkedInClient::factory(array(
+      'base_url' => "$this->serviceUrl",
+      'consumer_key' => $service->getConsumerKey(),
+      'consumer_secret' => $service->getConsumerSecret(),
+      'token' => $this->getOauthToken(),
+      'token_secret' => $this->getOauthTokenSecret(),
+    ));
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function getAuthorizeUrl() {
+    return "$this->serviceUrl/authorize.php";
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function getRequestTokenUrl() {
+    return "$this->serviceUrl/request.php";
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function getAccessTokenUrl() {
+    return "$this->serviceUrl/v3/oauth/authorize";
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function processAuthorizedAccount(array $response) {
+    parent::processAuthorizedAccount($response);
+    // Build the label and remote id from the response data.
+    $response = $this->client()->getMe();
+    $this->setRemoteIdentifier($response['id'])->setLabel("{$response['firstName']} {$response['lastName']}");
+  }
+
+}

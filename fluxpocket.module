@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * @file
+ * Main module file.
+ */
+
+/**
+ * Implements hook_fluxservice_plugin_directory().
+ */
+function fluxpocket_fluxservice_plugin_directory() {
+  return 'lib/Drupal/fluxpocket/Plugin';
+}
+
+/**
+ * Implements hook_rules_category_info().
+ */
+function fluxpocket_rules_category_info() {
+  $info =  array();
+  // Use the same icon as for the service plugin.
+  $info['fluxpocket'] = array(
+    'label' => t('Pocket'),
+  ) + fluxservice_get_service_icon_info('fluxpocket');
+  return $info;
+}
