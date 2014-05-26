@@ -2,22 +2,22 @@
   "name": "drupal/fluxpocket",
   "type": "drupal-module",
   "description": "Provides integration for the Fluxpocket API.",
-  "homepage": "http://drupal.org/project/fluxlinkedin",
+  "homepage": "http://github.com/gleek/fluxpocket",
   "license": "GPL-2.0",
   "authors": [
     {
       "name": "Umar Ahmad",
-      "email": "sdfasdf@sadf.sadf",
-      "role": "Project "
+      "email": "ahmad.umar2008@yahoo.in",
+      "role": "Developer"
     },
     {
       "name": "M",
-      "email": "maximilianmikus@gmail.com",
+      "email": "m",
       "role": "Developer"
     }
   ],
   "support": {
-    "issues": "http://drupal.org/project/issues/fluxlinkedin"
+    "issues": "http://github.com/gleek/fluxpocket/issues"
   },
   "require": {
     "php": ">=5.3.2"
