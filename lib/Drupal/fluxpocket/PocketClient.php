@@ -8,8 +8,7 @@ namespace Drupal\fluxpocket;
 use Guzzle\Common\Collection;
 use Guzzle\Plugin\Oauth\OauthPlugin;
 use Guzzle\Service\Client;
-use Drupal\fluxpocket\Tasks\Pocket;
-use Drupal\fluxpocket\Tasks\PocketAuth;
+use Duellsy\Pockpack\PockpackAuth;
 
 /**
  * Service client for the Pocket API.
@@ -20,7 +19,7 @@ class PocketClient extends Client {
    * {@inheritdoc}
    */
   public static function factory($config = array()) {
-    $client = new PocketAuth();
+    $client = new PockpackAuth();
     $client->connect($config['client_id']);
     return $client;
   }
