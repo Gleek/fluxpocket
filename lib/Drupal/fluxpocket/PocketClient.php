@@ -20,7 +20,11 @@ class PocketClient extends Client {
    */
   public static function factory($config = array()) {
     $client = new PockpackAuth();
-    $client->connect($config['client_id']);
+    $consumer_key = $config['client_id'];
+    if(!isset($_SESSION['fluxpocket-api']['consumer_key']))
+      $_SESSION['fluxpocket-api']['consumer_key'] = $consumer_key;
+    if(!isset($_SESSION['fluxpocket-api']['request_token']))
+      $request_token = $client->connect($consumer_key);
     return $client;
   }
 }

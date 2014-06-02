@@ -44,7 +44,10 @@ class PocketAccount extends Account implements PocketAccountInterface {
     //Using API to request token
     $pock_auth = new PockpackAuth();
     $request_token = $pock_auth->connect($key);
-    $_SESSION[$plugin] = $request_token;
+    $_SESSION['fluxpocket-api'] = array(
+      'request_token' => $request_token,
+      'consumer_key' => $key
+    );
     unset($_GET['destination']);
     drupal_goto($path = "https://getpocket.com/auth/authorize?request_token={$request_token}&redirect_uri={$redirect}");
   }
@@ -56,11 +59,11 @@ class PocketAccount extends Account implements PocketAccountInterface {
   }
 
   /**
-   * Builds the URL to redirect to after visiting dropbox for authentication.
+   * Builds the URL to redirect to after visiting pocket for authentication.
    *
    *
    * @return string
-   *   The URL to redirect to after visiting the Dropbox OAauth endpoint for
+   *   The URL to redirect to after visiting the pocket OAauth endpoint for
    *   requesting access privileges from a user.
    */
   protected function getRedirectUrl() {
@@ -92,7 +95,7 @@ class PocketAccount extends Account implements PocketAccountInterface {
   public function accessOAuthCallback() {
     // Ensure that all required request and account values are set.
     $plugin = $this->identifier();
-    if (!isset($_SESSION[$plugin])) {
+    if (!isset($_SESSION['fluxpocket-api'])) {
       return FALSE;
     }
     return TRUE;
@@ -103,9 +106,10 @@ class PocketAccount extends Account implements PocketAccountInterface {
    */
   public function processOAuthCallback() {
     $key = $this->getService()->getConsumerKey();
-    $request_token = $_SESSION[$this->identifier()];
+    $request_token = $_SESSION['fluxpocket-api']['request_token'];
     $client = new PockPackAuth();
     $data = $client->receiveTokenAndUsername($key, $request_token);
+    $_SESSION['fluxpocket-api']['access_token'] = $data['access_token'];
     $this->processAuthorizedAccount($data);
 
     // Remove the temporarily stored account entity from the tempstore.
