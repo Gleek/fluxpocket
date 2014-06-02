@@ -1,7 +1,7 @@
 FluxPocket
-==========
-[Pocket](http://getpocket.com) Integration for Fluxkraft
-----------------------------------------------------------
+=============
+[Pocket](http://getpocket.com)\(Formerly Read-It-Later\) Integration for Fluxkraft
+----------------------------------------------------------------------------------------
 
 **Project Under Development**
 
@@ -14,9 +14,11 @@ You can read the full proposal on http://goo.gl/g5UpZY
 
 ####What Works####
 - Authentication
+- Rule to Add url to Pocket
 
 ####What Does Not####
-- Integration of Rules
-- Basic Functionalities \(ADD/MODIFY/RETRIEVE etc.\) of the Pocket API
+- Basic Rules Functionalities \(~~ADD~~/MODIFY/RETRIEVE etc.\) of the Pocket API
 - Documentation
+- Events (Rules)
+
   
