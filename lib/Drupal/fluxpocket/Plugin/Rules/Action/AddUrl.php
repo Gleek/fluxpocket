@@ -44,7 +44,7 @@ class AddUrl extends RulesPluginHandlerBase implements \RulesActionHandlerInterf
     $client = $account->client();
     // Open a stream for reading and writing
     $consumer_key = $_SESSION['fluxpocket-api']['consumer_key'];
-    $request_token = $_SESSION['fluxpocket-api']['request_token'];
+    #$request_token = $_SESSION['fluxpocket-api']['request_token'];
     #drupal_goto("http://localhost/umar/testing/caught.php?con_key={$consumer_key}&req_token={$request_token}");
     $access_token = $_SESSION['fluxpocket-api']['access_token'];
     #$access_token = $client->receiveToken($consumer_key, $request_token);

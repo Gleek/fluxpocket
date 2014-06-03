@@ -76,7 +76,8 @@ class PocketAccount extends Account implements PocketAccountInterface {
   public function client() {
     $service = $this->getService();
     return PocketClient::factory(array(
-      'client_id' => $service->getConsumerKey()
+        'client_id' => $service->getConsumerKey(),
+        'access_token' => $this->getAccessToken()
     ));
   }
 
@@ -109,6 +110,7 @@ class PocketAccount extends Account implements PocketAccountInterface {
     $request_token = $_SESSION['fluxpocket-api']['request_token'];
     $client = new PockPackAuth();
     $data = $client->receiveTokenAndUsername($key, $request_token);
+    $this->data->set('access_token',$data['access_token']);
     $_SESSION['fluxpocket-api']['access_token'] = $data['access_token'];
     $this->processAuthorizedAccount($data);
 
@@ -122,6 +124,9 @@ class PocketAccount extends Account implements PocketAccountInterface {
   protected function processAuthorizedAccount(array $response) {
     // Build the label and remote id from the response data.
     $this->setRemoteIdentifier($response['access_token'])->setLabel($response['username']);
+  }
+  public function getAccessToken(){
+    return $this->data->get('access_token');
   }
 
 }
