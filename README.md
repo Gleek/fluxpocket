@@ -14,10 +14,9 @@ You can read the full proposal on http://goo.gl/g5UpZY
 
 ####What Works####
 - Authentication
-- Rule to Add url to Pocket
+- Rule to Add/Delete url to Pocket
 
 ####What Does Not####
-- Basic Rules Functionalities \(~~ADD~~/MODIFY/RETRIEVE etc.\) of the Pocket API
 - Documentation
 - Events (Rules)
 
