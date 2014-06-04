@@ -24,7 +24,7 @@ class PocketService extends OAuthServiceBase implements PocketServiceInterface {
       'label' => t('Pocket'),
       'description' => t('Provides Pocket integration for fluxkraft.'),
       'class' => '\Drupal\fluxpocket\Plugin\Service\PocketServiceHandler',
-      'icon font class' => 'icon-book',
+      'icon font class' => 'icon-chevron-down',
       'icon background color' => '#ef3e56',
     );
   }
