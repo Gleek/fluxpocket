@@ -25,7 +25,7 @@ class PocketService extends OAuthServiceBase implements PocketServiceInterface {
       'description' => t('Provides Pocket integration for fluxkraft.'),
       'class' => '\Drupal\fluxpocket\Plugin\Service\PocketServiceHandler',
       'icon font class' => 'icon-chevron-down',
-      'icon background color' => '#ef3e56',
+      'icon background color' => '#ed4055',
     );
   }
 
@@ -47,7 +47,7 @@ class PocketService extends OAuthServiceBase implements PocketServiceInterface {
     );
     $form['consumer_key'] = array(
       '#type' => 'textfield',
-      '#title' => t('Consumer key'),
+      '#title' => t('Consumer Key'),
       '#description' => t('The consumer key for authenticating through OAuth.'),
       '#default_value' => $this->getConsumerKey(),
       '#required' => TRUE,

@@ -34,7 +34,7 @@ class AddUrl extends RulesPluginHandlerBase implements \RulesActionHandlerInterf
           'type' => 'text',
           'label' => t('List of tags'),
           'description' => t('List of tags seperated by comma (,)'),
-          '#required' => FALSE,
+          'optional' => TRUE,
         ),
         'account' => static::getAccountParameterInfo(),
       ),
