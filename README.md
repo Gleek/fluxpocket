@@ -14,10 +14,24 @@ You can read the full proposal on http://goo.gl/g5UpZY
 
 ####What Works####
 - Authentication
-- Rule to Add/Delete url to Pocket
+- Rule to Add url to Pocket
+- Rule to Modify Url in Pocket (Modify options include Delete, Archiving, Favorite, Unfavorite, Re-add)
 
-####What Does Not####
+####What's Left####
 - Documentation
 - Events (Rules)
 
+####Usage####
+- `git clone` the Project in the `/sites/all/modules`
+- Enable this newly added module from admin panel
+- Install composer dependencies through
+```
+ drush composer-json-rebuild
+ drush composer-manager update
+```
+- Create a [Pocket App](http://getpocket.com/developer/apps/new)
+- Add a service endpoint for Pocket (Add consumer key)
+- Add service account (authorise the app)
+- Add Rules
+- Enjoy!!
   
