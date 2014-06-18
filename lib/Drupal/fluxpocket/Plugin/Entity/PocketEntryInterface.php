@@ -10,78 +10,79 @@ namespace Drupal\fluxpocket\Plugin\Entity;
 use Drupal\fluxservice\Entity\RemoteEntityInterface;
 
 /**
- * Provides a common interface for all Facebook objects.
+ * Provides a common interface for all Pocket objects.
  */
-interface FeedEntryInterface extends RemoteEntityInterface {
+interface PocketEntryInterface extends RemoteEntityInterface {
 
   /**
-   * Gets the copyright entry
+   * Gets the given url
    *
    * @return string
-   *   The feed's copyright entry.
    */
-  public function getCopyright();
+  public function getGivenUrl();
 
   /**
-   * Gets the feed's creation date
+   * Gets the resolved Url
+   *
+   * @return string
+   */
+  public function getResolvedUrl();
+
+  /**
+   * Gets the url's addition time
    *
    * @return string|null
    */
-  public function getDateCreated();
+  public function getTimeAdded();
 
   /**
-   * Gets the feed's modification date
+   * Gets the url updation time
    *
    * @return string
-   *   The feed's modification date.
    */
-  public function getDateModified();
+  public function getTimeUpdated();
 
   /**
-   * Gets the feed's description.
+   * Gets the Url's Excerpt.
    *
    * @return string
    *   The feed's description.
    */
-  public function getDescription();
+  public function getExcerpt();
 
   /**
-   * Gets the feed's ID.
+   * Gets the item's ID.
    *
    * @return string
    */
   public function getId();
 
   /**
-   * Gets the feed's language.
+   * Gets the tag's
    *
    * @return string
-   *   The feed's language.
    */
-  public function getLanguage();
+  public function getTags();
 
   /**
-   * Gets a link to the HTML source.
+   * Gets the given title.
    *
-   * @return string
-   *   The feed's link.
+   * @return string|null
    */
-  public function getLink();
+  public function getGivenTitle();
 
   /**
-   * Gets a link to the XML feed.
+   * Gets the resolved title.
    *
-   * @return string
-   *   The feed's link.
+   * @return string|null
    */
-  public function getFeedLink();
+  public function getResolvedTitle();
 
   /**
-   * Gets the feed's title.
+   * Gets the number of words.
    *
-   * @return string
-   *   The feed's title.
+   * @return string|null
    */
-  public function getTitle();
+  public function getWordCount();
 
 }
