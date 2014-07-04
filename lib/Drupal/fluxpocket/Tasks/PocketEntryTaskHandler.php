@@ -24,9 +24,10 @@ class PocketEntryTaskHandler extends PocketTaskBase {
     $response = $account->client()->retrieve($arguments);
     //Converting to array
     $entries = json_decode(json_encode($response->{'list'}),true);
-    //var_export($entries);
     if (($response && $entries)) {
+      #watchdog('var_dump',var_export($entries));
       $entries = fluxservice_entify_multiple($entries, 'fluxpocket_entry', $account);
+
       foreach ($entries as $entry) {
         rules_invoke_event($this->getEvent(), $account, $entry);
       }
