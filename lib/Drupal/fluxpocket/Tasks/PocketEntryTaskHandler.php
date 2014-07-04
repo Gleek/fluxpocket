@@ -5,7 +5,7 @@
  * Contains PocketEntryTaskHandler.
  */
 
-namespace Drupal\fluxpocket\Task;
+namespace Drupal\fluxpocket\Tasks;
 /**
  * Event dispatcher for the Facebook status messages.
  */
@@ -22,7 +22,9 @@ class PocketEntryTaskHandler extends PocketTaskBase {
     $identifier = $this->task['identifier'];
     $account = $this->getAccount();
     $response = $account->client()->retrieve($arguments);
-    $entries = $response->{'list'};
+    //Converting to array
+    $entries = json_decode(json_encode($response->{'list'}),true);
+    //var_export($entries);
     if (($response && $entries)) {
       $entries = fluxservice_entify_multiple($entries, 'fluxpocket_entry', $account);
       foreach ($entries as $entry) {
@@ -47,7 +49,7 @@ class PocketEntryTaskHandler extends PocketTaskBase {
   protected function getRequestArguments() {
     $arguments = array(
       'state'         => 'all',
-      'detailType'    => 'complete'
+      'detailType'    => 'complete',
       'sort'          => 'oldest'
     );
     // We store the remote identifier of the last Pocket Entry that was

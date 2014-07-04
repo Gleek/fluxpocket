@@ -5,7 +5,7 @@
  * Contains PocketTaskBase.
  */
 
-namespace Drupal\fluxpocket\Task;
+namespace Drupal\fluxpocket\Tasks;
 
 use Drupal\fluxservice\Rules\TaskHandler\RepetitiveTaskHandlerBase;
 
