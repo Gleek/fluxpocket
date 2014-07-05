@@ -24,6 +24,10 @@ class PocketEntryTaskHandler extends PocketTaskBase {
     $response = $account->client()->retrieve($arguments);
     //Converting to array (encoding the object as json and then decoding as array)
     $entries = json_decode(json_encode($response->{'list'}),true);
+
+    //Hack to get the updated time Correct method is to implement this in entity class
+    $updated_time = intval(end($entries)['time_updated']);
+
     if (($response && $entries)) {
       $entries = fluxservice_entify_multiple($entries, 'fluxpocket_entry', $account);
       foreach ($entries as $entry) {
@@ -31,8 +35,8 @@ class PocketEntryTaskHandler extends PocketTaskBase {
       }
 
       // Store the timestamp of the last status message that was processed.
-      $last = end($entries);
-      $store->set($this->task['identifier'], $last->getRemoteIdentifier());
+      //$last = end($entries);
+      $store->set($this->task['identifier'], $updated_time);
     }
     elseif (empty($arguments['since'])) {
       $store->set($identifier, FALSE);
