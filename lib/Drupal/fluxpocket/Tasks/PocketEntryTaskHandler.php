@@ -25,8 +25,10 @@ class PocketEntryTaskHandler extends PocketTaskBase {
     //Converting to array (encoding the object as json and then decoding as array)
     $entries = json_decode(json_encode($response->{'list'}),true);
 
-    //Hack to get the updated time Correct method is to implement this in entity class
-    $updated_time = intval(end($entries)['time_updated']);
+    //Hack to get the updated time Correct method is to implement this in entity
+    //class
+    //1 is added inorder to skip the latest entry
+    $updated_time = intval(end($entries)['time_updated'])+1;
 
     if (($response && $entries)) {
       $entries = fluxservice_entify_multiple($entries, 'fluxpocket_entry', $account);

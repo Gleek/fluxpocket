@@ -14,12 +14,17 @@ You can read the full proposal on http://goo.gl/g5UpZY
 
 ####What Works####
 - Authentication
-- Rule to Add url to Pocket
-- Rule to Modify Url in Pocket (Modify options include Delete, Archiving, Favorite, Unfavorite, Re-add)
+- Action
+  - Add url along with tags
+  - Delete URL
+  - Archive / Unarchive URL
+  - Favorite / Unfavorite URL
+- Events / Triggers
+  - URL is added
 
 ####What's Left####
 - Documentation
-- Events (Rules)
+- Some Actions and Events \(Refer to the [issues](https://github.com/Gleek/fluxpocket/issues)\)
 
 ####Usage####
 - `git clone` the Project in the `/sites/all/modules`
