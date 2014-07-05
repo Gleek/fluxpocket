@@ -43,7 +43,7 @@ abstract class PocketEventHandlerBase extends CronEventHandlerBase {
   }
 
   /**
-   * Returns info for the provided tweet variable.
+   * Returns info for the provided entry variable.
    */
   public static function getEntryVariableInfo() {
     return array(

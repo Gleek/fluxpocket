@@ -23,7 +23,7 @@ class PocketEventEntriesHandler extends PocketEventHandlerBase {
       'label' => t("A new URL was added in Pocket"),
       'variables' => array(
         'account' => static::getServiceVariableInfo(),
-        'message' => static::getEntryVariableInfo(),
+        'pocket' => static::getEntryVariableInfo(),
       ),
     );
   }

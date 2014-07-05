@@ -22,12 +22,10 @@ class PocketEntryTaskHandler extends PocketTaskBase {
     $identifier = $this->task['identifier'];
     $account = $this->getAccount();
     $response = $account->client()->retrieve($arguments);
-    //Converting to array
+    //Converting to array (encoding the object as json and then decoding as array)
     $entries = json_decode(json_encode($response->{'list'}),true);
     if (($response && $entries)) {
-      #watchdog('var_dump',var_export($entries));
       $entries = fluxservice_entify_multiple($entries, 'fluxpocket_entry', $account);
-
       foreach ($entries as $entry) {
         rules_invoke_event($this->getEvent(), $account, $entry);
       }
@@ -61,9 +59,9 @@ class PocketEntryTaskHandler extends PocketTaskBase {
     }
     // If it hasn't been set yet, it means that we are running this for thes
     // first time. In order to prevent flooding and processing of old Entries we
-    // limit the request to a single Entry.
+    // limit the request to only three Entries.
     elseif ($since_id === NULL) {
-      $arguments['count'] = 1;
+      $arguments['count'] = 3;
     }
     return $arguments;
   }
