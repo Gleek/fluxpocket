@@ -31,7 +31,7 @@ class PocketEntry extends RemoteEntity implements PocketEntryInterface {
         'remote id' => 'id',
       ),
       'fluxservice_efq_driver' => array(
-        'default' => '\Drupal\fluxtwitter\TwitterTweetEntityQueryDriver',
+        'default' => '\Drupal\fluxpocket\PocketEntryEntityQueryDriver',
       ),
     );
   }
@@ -48,14 +48,14 @@ class PocketEntry extends RemoteEntity implements PocketEntryInterface {
 
     $info['time_added'] = array(
       'label' => t('Creation time'),
-      'description' => t('The timestamp for when the entry was added.'),
+      'description' => t('The timestamp for when the URL was added.'),
       'type' => 'text',
       'getter callback' => 'entity_property_verbatim_date_get',
     );
 
     $info['time_updated'] = array(
       'label' => t('Updation time'),
-      'description' => t('The timestamp for when the Tweet was created.'),
+      'description' => t('The timestamp for when the URL was updated.'),
       'type' => 'text',
     );
 

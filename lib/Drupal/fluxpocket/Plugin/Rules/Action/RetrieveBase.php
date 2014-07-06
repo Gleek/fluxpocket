@@ -12,7 +12,7 @@ use Drupal\fluxpocket\Plugin\Service\PocketAccountInterface;
 use Drupal\fluxpocket\Rules\RulesPluginHandlerBase;
 
 /**
- * Base class for twitter Rules plugin handler.
+ * Base class for Pocket Rules plugin handler.
  */
 abstract class RetrieveBase extends RulesPluginHandlerBase implements \RulesActionHandlerInterface {
 

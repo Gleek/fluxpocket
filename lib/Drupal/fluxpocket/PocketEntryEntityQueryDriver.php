@@ -10,7 +10,7 @@ namespace Drupal\fluxpocket;
 use Drupal\fluxservice\Query\RangeRemoteEntityQueryDriverBase;
 
 /**
- * EFQ query driver for Pocket tweets.
+ * EFQ query driver for Pocket entries.
  */
 class PocketEntryEntityQueryDriver extends RangeRemoteEntityQueryDriverBase {
 

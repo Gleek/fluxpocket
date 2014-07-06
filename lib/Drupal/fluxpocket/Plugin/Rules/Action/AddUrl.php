@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains UploadFile.
+ * Contains AddUrl.
  */
 
 namespace Drupal\fluxpocket\Plugin\Rules\Action;
@@ -13,7 +13,7 @@ use Drupal\fluxpocket\Rules\RulesPluginHandlerBase;
 use Duellsy\Pockpack\PockpackQueue;
 
 /**
- * Action for posting a status message on a page.
+ * Action for posting a adding url to Pocket.
  */
 class AddUrl extends RulesPluginHandlerBase implements \RulesActionHandlerInterface {
 
