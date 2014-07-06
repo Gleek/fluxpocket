@@ -35,6 +35,4 @@ class PocketAddTask extends PocketEntryTaskBase {
     }
     return $arguments;
   }
-
-
 }

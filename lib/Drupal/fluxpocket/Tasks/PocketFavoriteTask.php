@@ -2,24 +2,25 @@
 
 /**
  * @file
- * Contains PocketArchiveTask.
+ * Contains PocketFavoriteTask.
  */
 
 namespace Drupal\fluxpocket\Tasks;
 
 /**
- * Event dispatcher for the Pocket Archive URL.
+ * Event dispatcher for the Pocket Favorite Task for given user.
  */
-class PocketArchiveTask extends PocketEntryTaskBase {
+class PocketFavoriteTask extends PocketEntryTaskBase {
 
   /**
    * {@inheritdoc}
    */
   protected function getRequestArguments() {
     $arguments = array(
-      'state'         => 'archive',
+      'state'         => 'all',
       'detailType'    => 'complete',
-      'sort'          => 'oldest'
+      'sort'          => 'oldest',
+      'favorite'      => 1
     );
     // We store the remote identifier of the last Pocket Entry that was
     // processed so that we can benefit from the 'since_id' query argument.
