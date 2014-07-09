@@ -2,23 +2,25 @@
 
 /**
  * @file
- * Contains PocketEventArchiveHandler.
+ * Contains PocketEventEntriesHandler.
  */
 
 namespace Drupal\fluxpocket\Plugin\Rules\EventHandler;
 
+use Drupal\fluxpocket\Plugin\Service\PocketAccountInterface;
+
 /**
- * Event handler for polling for Archived URLs in Pocket.
+ * Event handler for updation of url to pocket
  */
-class PocketEventArchiveHandler extends PocketEventHandlerBase {
+class PocketEventUpdateHandler extends PocketEventHandlerBase {
 
   /**
    * Defines the event.
    */
   public static function getInfo() {
     return static::getInfoDefaults() + array(
-      'name' => 'fluxpocket_event_archive',
-      'label' => t("A URL was archived in Pocket"),
+      'name' => 'fluxpocket_event_update',
+      'label' => t("A  URL was updated in Pocket"),
       'variables' => array(
         'account' => static::getServiceVariableInfo(),
         'pocket' => static::getEntryVariableInfo(),
@@ -30,7 +32,7 @@ class PocketEventArchiveHandler extends PocketEventHandlerBase {
    * {@inheritdoc}
    */
   public function getTaskHandler() {
-    return 'Drupal\fluxpocket\Tasks\PocketArchiveTask';
+    return 'Drupal\fluxpocket\Tasks\PocketUpdatedTask';
   }
 
   /**
@@ -40,7 +42,7 @@ class PocketEventArchiveHandler extends PocketEventHandlerBase {
     $settings = $this->getSettings();
     $account = entity_load_single('fluxservice_account', $settings['account']);
     if ($settings['account'] && $account) {
-      return t('A new URL is archived in Pocket of %account.', array(
+      return t('A new Entry updated on the Pocket of %account.', array(
           '%account' => "{$account->label()}"
       ));
     }

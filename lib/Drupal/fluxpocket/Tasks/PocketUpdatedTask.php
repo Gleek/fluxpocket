@@ -2,15 +2,15 @@
 
 /**
  * @file
- * Contains PocketFavoriteTask.
+ * Contains PocketArchiveTask.
  */
 
 namespace Drupal\fluxpocket\Tasks;
 
 /**
- * Event dispatcher for the Pocket Favorite Task for given user.
+ * Event dispatcher for the Pocket Archive URL.
  */
-class PocketFavoriteTask extends PocketEntryTaskBase {
+class PocketUpdatedTask extends PocketEntryTaskBase {
 
   /**
    * {@inheritdoc}
@@ -19,8 +19,7 @@ class PocketFavoriteTask extends PocketEntryTaskBase {
     $arguments = array(
       'state'         => 'all',
       'detailType'    => 'complete',
-      'sort'          => 'oldest',
-      'favorite'      => 1
+      'sort'          => 'oldest'
     );
     // We store the remote identifier of the last Pocket Entry that was
     // processed so that we can benefit from the 'since_id' query argument.
@@ -41,7 +40,6 @@ class PocketFavoriteTask extends PocketEntryTaskBase {
    * {@inheritdoc}
    */
   protected function getTime($entries){
-    return intval($entries['time_favorited'])+1;
+    return intval($entries['time_updated'])+1;
   }
-
 }

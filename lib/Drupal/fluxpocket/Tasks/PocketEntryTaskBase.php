@@ -21,15 +21,14 @@ abstract class PocketEntryTaskBase extends PocketTaskBase {
     $arguments = $this->getRequestArguments();
     $identifier = $this->task['identifier'];
     $account = $this->getAccount();
-    $response = $account->client()->retrieve($arguments);
-    //Converting to array (encoding the object as json and then decoding as array)
-    $entries = json_decode(json_encode($response->{'list'}),true);
 
 
-    //1 is added inorder to skip the latest entry
-    $updated_time = intval(end($entries)['time_updated']) + 1;
+    $entries = $this->getList($account, $arguments);
 
-    if (($response && $entries)) {
+
+    $updated_time = $this->getTime(end($entries));
+
+    if ( $entries ) {
       $entries = fluxservice_entify_multiple($entries, 'fluxpocket_entry', $account);
       foreach ($entries as $entry) {
         rules_invoke_event($this->getEvent(), $account, $entry);
@@ -44,6 +43,25 @@ abstract class PocketEntryTaskBase extends PocketTaskBase {
     }
   }
 
+
+  /**
+   *Retrieves the List for the particular task
+   *
+   */
+  protected function getList($account, $arguments) {
+    $response = $account->client()->retrieve($arguments);
+    //Converting to array (encoding the object as json and then decoding as array)
+    $entries = json_decode (json_encode ($response->{'list'}) , true);
+    return $entries;
+  }
+
+
+  /**
+   *Retrieves the corresponding time for particular task
+   *
+   */
+  abstract protected function getTime($entries);
+
   /**
    * Retrieves the request arguments based on the event configuration.
    *
@@ -51,5 +69,7 @@ abstract class PocketEntryTaskBase extends PocketTaskBase {
    *   The request arguments.
    */
   abstract protected function getRequestArguments();
+
+
 
 }

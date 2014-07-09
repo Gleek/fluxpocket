@@ -35,4 +35,11 @@ class PocketArchiveTask extends PocketEntryTaskBase {
     }
     return $arguments;
   }
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function getTime($entries){
+    return intval($entries['time_read'])+1;
+  }
 }

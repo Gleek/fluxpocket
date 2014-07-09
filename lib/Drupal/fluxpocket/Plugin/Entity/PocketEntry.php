@@ -92,6 +92,26 @@ class PocketEntry extends RemoteEntity implements PocketEntryInterface {
       'type' => 'text',
     );
 
+    $info['tags'] = array(
+    'label' => t('Tags'),
+      'description' => t('A collection of tags associated with the particular entry.'),
+      'type' => 'list<struct>',
+      'property info' => array(
+        'id' => array(
+          'label' => t('Contributor ID'),
+          'description' => t('The ID of the Twitter user who contributed to the Tweet.'),
+          'type' => 'integer',
+        ),
+        'screen_name' => array(
+          'label' => t('Contributor screen name'),
+          'description' => t('The screen name of the Twitter user who contributed to the Tweet.'),
+          'type' => 'string',
+        ),
+      ),
+    );
+
+
+
     $info['favorite'] = array(
       'label' => t('Favorite'),
       'description' => t('Indicates whether the URL is added to favorites or not'),
