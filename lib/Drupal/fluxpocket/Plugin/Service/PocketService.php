@@ -38,6 +38,14 @@ class PocketService extends OAuthServiceBase implements PocketServiceInterface {
       'polling_interval' => 900,
     ) + parent::getDefaultSettings();
   }
+
+  /**
+   * Structure of form for the Pocket Service
+   *
+   * @param array $form_state
+   *
+   * @return array $form
+   */
   public function settingsForm(array &$form_state) {
     $form['help'] = array(
       '#type' => 'markup',

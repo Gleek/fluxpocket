@@ -17,7 +17,11 @@ use Duellsy\Pockpack\Pockpack;
 class PocketClient extends Client {
 
   /**
-   * {@inheritdoc}
+   * Returns the Pockpack object which is used as base for interaction
+   *
+   * @param array $config array storing client id and access_token
+   *
+   * @return object $client Object used as base for interaction with Pocket
    */
   public static function factory($config = array()) {
     $consumer_key = $config['client_id'];

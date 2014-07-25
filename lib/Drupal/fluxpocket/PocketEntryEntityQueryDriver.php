@@ -2,7 +2,7 @@
 
 /**
  * @file
- *   Contains PocketUserContactQueryDriver.
+ * Contains PocketUserContactQueryDriver.
  */
 
 namespace Drupal\fluxpocket;
@@ -40,14 +40,6 @@ class PocketEntryEntityQueryDriver extends RangeRemoteEntityQueryDriverBase {
     return $response;
   }
 
-  /**
-   * Runs the count query.
-
-  protected function makeCountRequest() {
-    $response = $this->getAccount()->client()->GetUserTimeline(array('count' => 200));
-    return count($response);
-    }
-  */
 
   /**
    * {@inheritdoc}

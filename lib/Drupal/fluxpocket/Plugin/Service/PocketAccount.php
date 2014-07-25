@@ -52,7 +52,12 @@ class PocketAccount extends Account implements PocketAccountInterface {
     drupal_goto($path = "https://getpocket.com/auth/authorize?request_token={$request_token}&redirect_uri={$redirect}");
   }
 
-
+  /**
+   * Loads Account for OAuth
+   *
+   * @param string $key Consumer Key of the app
+   * @param $plugin Plugin for the particular service
+   */
   public static function getAccountForOAuthCallback($key, $plugin) {
     $store = fluxservice_tempstore("fluxservice.account.{$plugin}");
     return $store->getIfOwner($key);
@@ -125,6 +130,12 @@ class PocketAccount extends Account implements PocketAccountInterface {
     // Build the label and remote id from the response data.
     $this->setRemoteIdentifier($response['access_token'])->setLabel($response['username']);
   }
+
+  /**
+   * Returns access token after authorization
+   *
+   * @return string Access token for the session
+   */
   public function getAccessToken(){
     return $this->data->get('access_token');
   }

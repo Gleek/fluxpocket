@@ -25,7 +25,7 @@ abstract class RulesPluginHandlerBase extends FluxRulesPluginHandlerBase {
   }
 
   /**
-   * Rules dropbox integration access callback.
+   * Rules Pocket integration access callback.
    */
   public static function integrationAccess($type, $name) {
     return fluxservice_access_by_plugin('fluxpocket');

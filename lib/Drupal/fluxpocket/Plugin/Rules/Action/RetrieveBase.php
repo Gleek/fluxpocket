@@ -16,6 +16,15 @@ use Drupal\fluxpocket\Rules\RulesPluginHandlerBase;
  */
 abstract class RetrieveBase extends RulesPluginHandlerBase implements \RulesActionHandlerInterface {
 
+  /**
+   * Convert page url to the item id stored in Pocket
+   * @param object $client
+   *    Object to connect to Pocket services.
+   * @param string|null $page_url
+   *    String url to be converted to item_id
+   * @return int|null $id
+   *    Item Id of the given url
+   */
   public function getItemIdFromUrl($client, $page_url = NULL) {
     if ($page_url == NULL) {
       return NULL;
