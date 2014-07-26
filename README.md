@@ -3,8 +3,6 @@ FluxPocket
 [Pocket](http://getpocket.com)\(Formerly Read-It-Later\) Integration for Fluxkraft
 ----------------------------------------------------------------------------------------
 
-**Project Under Development**
-
 This project is done as the Google Summer of Code Project under Drupal.
 You can read the full proposal on http://goo.gl/g5UpZY 
 
@@ -19,12 +17,18 @@ You can read the full proposal on http://goo.gl/g5UpZY
   - Delete URL
   - Archive / Unarchive URL
   - Favorite / Unfavorite URL
+  - Adding Tags
+  - Replacing Tags
+  - Clearing Tags
 - Events / Triggers
-  - URL is added
+  - New URL is added
+  - A URL is archived
+  - A URL is added to favorites
+  - A URL is updated
 
 ####What's Left####
 - Documentation
-- Some Actions and Events \(Refer to the [issues](https://github.com/Gleek/fluxpocket/issues)\)
+- Tagging Event \(Refer to the [issues](https://github.com/Gleek/fluxpocket/issues)\)
 
 ####Usage####
 - `git clone` the Project in the `/sites/all/modules`
