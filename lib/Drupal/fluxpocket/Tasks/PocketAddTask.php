@@ -80,6 +80,19 @@ class PocketAddTask extends PocketTaskBase {
     //Converting to array (encoding the object as json and then decoding as array)
     $entries = json_decode (json_encode ($response->{'list'}), true);
 
+    //Editing tags for easy parsing
+    $tags = array();
+
+    foreach($entries as $index => $elements) {
+      if ( isset($entries[$index]['tags']) ) {
+        foreach($entries[$index]['tags'] as $tag => $name) {
+          array_push($tags,$tag);
+        }
+      }
+      $entries[$index]['tags'] = $tags;
+      $tags = array();
+    }
+
     //Filtering out entries which are created before the updated time
     if ($time) {
       foreach ($entries as $index => $elements) {

@@ -52,6 +52,20 @@ abstract class PocketEntryTaskBase extends PocketTaskBase {
     $response = $account->client()->retrieve($arguments);
     //Converting to array (encoding the object as json and then decoding as array)
     $entries = json_decode (json_encode ($response->{'list'}) , true);
+
+    //Editing tags for easy parsing
+    $tags = array();
+
+    foreach($entries as $index => $elements) {
+      if ( isset($entries[$index]['tags']) ) {
+        foreach($entries[$index]['tags'] as $tag => $name) {
+          array_push($tags,$tag);
+        }
+      }
+      $entries[$index]['tags'] = $tags;
+      $tags = array();
+    }
+
     return $entries;
   }
 
@@ -59,6 +73,10 @@ abstract class PocketEntryTaskBase extends PocketTaskBase {
   /**
    *Retrieves the corresponding time for particular task
    *
+   * @param array $entries the retrieved list from pocket
+   *
+   * @return string
+   *   The timestamp after which the entries are retrieved
    */
   abstract protected function getTime($entries);
 
