@@ -25,11 +25,13 @@ You can read the full proposal on http://goo.gl/g5UpZY
   - A URL is archived
   - A URL is added to favorites
   - A URL is updated
-  - Tag is changed
+- Conditions
+  - List of tags generated which can be checked against user specified tags
+ 
 
 ####What's Left####
 - Documentation
-- \(Refer to the [issues](https://github.com/Gleek/fluxpocket/issues)\)
+- Refer to the [issues](https://github.com/Gleek/fluxpocket/issues)
 
 ####Usage####
 - `git clone` the Project in the `/sites/all/modules`
