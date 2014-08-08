@@ -30,20 +30,8 @@ You can read the full proposal on http://goo.gl/g5UpZY
  
 
 ####What's Left####
-- Documentation
 - Refer to the [issues](https://github.com/Gleek/fluxpocket/issues)
 
 ####Usage####
-- `git clone` the Project in the `/sites/all/modules`
-- Enable this newly added module from admin panel
-- Install composer dependencies through
-```
- drush composer-json-rebuild
- drush composer-manager update
-```
-- Create a [Pocket App](http://getpocket.com/developer/apps/new)
-- Add a service endpoint for Pocket (Add consumer key)
-- Add service account (authorise the app)
-- Add Rules
-- Enjoy!!
+Refer to USAGE.md for details
   
