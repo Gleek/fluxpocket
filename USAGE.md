@@ -88,6 +88,7 @@ Rules Provided
 **Event**
 - **React on Rule** : After saving new content
 - **Restrict by Type**: Article
+
 **Action** (Add URL to pocket)
 - **URL** : node:url
 - **Tags** : \<Comma seperated tags, if any\>
@@ -99,6 +100,7 @@ Similarly a rule can be added to delete or archive url in pocket everytime an Ar
 **Event**
 - **React on Rule** : A URL is added to favorites in Pocket
 - **Account** : \<Select your email id from the list\>
+
 **Action** (Tweet)
 - **Value**: \[pocket:given-url] <any other text\>
 - **Account**: \<Select your tweet handle\>
