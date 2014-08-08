@@ -36,18 +36,18 @@ Usage
 Rules Provided
 -----------------
 
-### Events###
+###Events###
   - **A new URL was added in Pocket** : Triggered when a new url is added to the Pocket
   - **A URL is added to favorites in Pocket** : Triggered when a URL is added to favorites in Pocket
   - **A URL is added to archives in Pocket** : Triggered when a URL is added to archives in Pocket
   - **A URL is updated in Pocket** : Triggered when any change takes place in Pocket
 
-*Caution:*: Don't forget to configure your cron for the Events to work
+*Caution:* Don't forget to configure your cron for the Events to work
 
-### Action###
+###Action###
   - **Add url along with tags** : Addition of URL to Pocket. Optionally you can also provide tags
   - **Delete URL** : Deletion of URL from Pocket
-  - **Archive / Unarchive URL ** : Two seperate actions are provided for archiving purpose.
+  - **Archive / Unarchive URL** : Two seperate actions are provided for archiving purpose.
   - **Favorite / Unfavorite URL** : Two seperate actions are provided for favorite purpose
   - **Adding Tags** : Action Add tags to an entry in the already existing tags.
   - **Replacing Tags** : Replace tags of an entry with new provided tags.
@@ -59,8 +59,7 @@ Rules Provided
 - Defining Event *A URL is updated* or any other event for the purpose
 - Select Condition *List contain items*
 - Using List *pocket:tags*
-- Use direct input mode to write a tag to be checked manually
-- or use the data selection mode to use a variable containing tag name
+- Use direct input mode to write a tag to be checked manually or use the data selection mode to use a variable containing tag name
 - You're done!!
 
 ### List of Variables provided by Events ###
@@ -83,7 +82,7 @@ Rules Provided
 | [pocket:has-video]     | Integer	    |	Indicates whether Pocket detects video on the page or not `1` if image found, `0` if not |
 | [pocket:word-count]	 | Integer	    |   Gives the word count of the article : `1021`|
 
-### Example Rules ### 
+###Example Rules### 
 
 ####Adding Drupal Article and automatically saving it in Pocket for later read####
 **Event**
@@ -91,18 +90,18 @@ Rules Provided
 - **Restrict by Type**: Article
 **Action** (Add URL to pocket)
 - **URL** : node:url
-- *Tags* : <Comma seperated tags, if any>
-- *Pocket Account* : <Select your e-mail address>
+- **Tags** : \<Comma seperated tags, if any\>
+- **Pocket Account** : \<Select your e-mail address\>
 
 Similarly a rule can be added to delete or archive url in pocket everytime an Article is deleted on a drupal site.
 
 ####Tweeting about your favorite articles in Pocket (also involves fluxtwitter)####
 **Event**
-- *React on Rule* : A URL is added to favorites in Pocket
-- *Account* : <Select your email id from the list>
+- **React on Rule** : A URL is added to favorites in Pocket
+- **Account** : \<Select your email id from the list\>
 **Action** (Tweet)
-- **Value**: [pocket:given:url] <any other text>
-- **Account**: <Select your tweet handle>
+- **Value**: \[pocket:given-url] <any other text\>
+- **Account**: \<Select your tweet handle\>
 
 
 ####Other Examples of Rules which are currently supported####
