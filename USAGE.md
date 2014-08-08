@@ -82,7 +82,7 @@ Rules Provided
 | [pocket:has-video]     | Integer	    |	Indicates whether Pocket detects video on the page or not `1` if image found, `0` if not |
 | [pocket:word-count]	 | Integer	    |   Gives the word count of the article : `1021`|
 
-###Example Rules### 
+###Example Rules
 
 ####Adding Drupal Article and automatically saving it in Pocket for later read####
 **Event**
