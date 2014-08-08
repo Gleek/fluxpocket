@@ -11,7 +11,7 @@ Installation
   - Universally Unique ID
   - Entity API
   - Composer Manager
-  - X Autoload 7.x-3.6
+  - xautoload-7.x-4.x-dev
 
 - Install Module
   - `git clone https://github.com/Gleek/fluxpocket.git` in the `/sites/all/modules`
