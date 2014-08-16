@@ -33,7 +33,7 @@ class AddTag extends RetrieveBase {
         'tags' => array(
           'type' => 'text',
           'label' => t('List of tags to be added'),
-          'description' => t('List of tags, to be added, seperated by comma (,)'),
+          'description' => t('List of tags, to be added, separated by comma (,)'),
         ),
         'account' => static::getAccountParameterInfo(),
       ),

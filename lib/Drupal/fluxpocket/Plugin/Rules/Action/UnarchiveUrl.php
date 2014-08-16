@@ -13,7 +13,7 @@ use Drupal\fluxpocket\Rules\RulesPluginHandlerBase;
 use Duellsy\Pockpack\PockpackQueue;
 
 /**
- * Action for unarchiving url
+ * Action for unarchiving url.
  */
 class UnarchiveUrl extends RetrieveBase {
 

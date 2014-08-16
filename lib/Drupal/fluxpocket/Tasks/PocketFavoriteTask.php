@@ -20,7 +20,7 @@ class PocketFavoriteTask extends PocketEntryTaskBase {
       'state'         => 'all',
       'detailType'    => 'complete',
       'sort'          => 'oldest',
-      'favorite'      => 1
+      'favorite'      => 1,
     );
     // We store the remote identifier of the last Pocket Entry that was
     // processed so that we can benefit from the 'since_id' query argument.

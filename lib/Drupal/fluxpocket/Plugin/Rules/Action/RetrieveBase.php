@@ -18,10 +18,13 @@ abstract class RetrieveBase extends RulesPluginHandlerBase implements \RulesActi
 
   /**
    * Convert page url to the item id stored in Pocket.
+   *
    * @param object $client
    *    Object to connect to Pocket services.
+   *
    * @param string|null $page_url
-   *    String url to be converted to item_id
+   *    String url to be converted to item_id.
+   *
    * @return int|null $id
    *    Item Id of the given url
    */
@@ -31,7 +34,7 @@ abstract class RetrieveBase extends RulesPluginHandlerBase implements \RulesActi
     }
     $options = array(
     'state'         => 'all',
-    'detailType'    => 'simple'
+    'detailType'    => 'simple',
     );
     $list = $client->retrieve($options);
 

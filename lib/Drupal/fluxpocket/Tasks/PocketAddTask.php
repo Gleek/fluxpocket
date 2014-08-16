@@ -25,7 +25,7 @@ class PocketAddTask extends PocketTaskBase {
 
     $entries = $this->getList($account, $arguments, $time);
 
-    // 1 is added inorder to skip the latest entry
+    // 1 is added inorder to skip the latest entry.
     $updated_time = intval(end($entries)['time_updated']) + 1;
 
     if ($entries) {
@@ -72,20 +72,20 @@ class PocketAddTask extends PocketTaskBase {
   /**
    * Retrieves the List for the particular task.
    */
-  protected function getList($account, $arguments, $time = NULL){
+  protected function getList($account, $arguments, $time = NULL) {
     $response = $account->client()->retrieve($arguments);
 
     // Converting to array by
     // encoding the object as json and then decoding as array.
     $entries = json_decode(json_encode($response->{'list'}), TRUE);
 
-    // Editing tags for easy parsing
+    // Editing tags for easy parsing.
     $tags = array();
 
     foreach ($entries as $index => $elements) {
       if (isset($entries[$index]['tags'])) {
         foreach ($entries[$index]['tags'] as $tag => $name) {
-          array_push($tags,$tag);
+          array_push($tags, $tag);
         }
       }
       $entries[$index]['tags'] = $tags;

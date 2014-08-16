@@ -70,7 +70,8 @@ abstract class PocketEntryTaskBase extends PocketTaskBase {
   /**
    * Retrieves the corresponding time for particular task.
    *
-   * @param array $entries the retrieved list from pocket
+   * @param array $entries
+   *  the retrieved list from pocket
    *
    * @return string
    *   The timestamp after which the entries are retrieved

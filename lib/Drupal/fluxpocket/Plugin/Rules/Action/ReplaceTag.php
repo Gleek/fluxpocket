@@ -33,7 +33,7 @@ class ReplaceTag extends RetrieveBase {
         'tags' => array(
           'type' => 'text',
           'label' => t('List of tags to be replaced'),
-          'description' => t('List of tags, seperated by comma (,)'),
+          'description' => t('List of tags, separated by comma (,)'),
         ),
         'account' => static::getAccountParameterInfo(),
       ),

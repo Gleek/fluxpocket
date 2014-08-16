@@ -41,7 +41,7 @@ class PocketEventArchiveHandler extends PocketEventHandlerBase {
     $account = entity_load_single('fluxservice_account', $settings['account']);
     if ($settings['account'] && $account) {
       return t('A new URL is archived in Pocket of %account.', array(
-          '%account' => "{$account->label()}"
+          '%account' => "{$account->label()}",
       ));
     }
     return $this->eventInfo['label'];

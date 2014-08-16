@@ -69,7 +69,6 @@ class PocketAccount extends Account implements PocketAccountInterface {
    * @return string
    *   The URL to redirect to after visiting the pocket OAauth endpoint for
    *   requesting access privileges from a user.
-   *
    */
   protected function getRedirectUrl() {
     return url("fluxservice/oauth/{$this->bundle()}/{$this->identifier()}", array('absolute' => TRUE));

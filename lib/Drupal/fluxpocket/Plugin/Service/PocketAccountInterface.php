@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains PocketAccountInterface
+ * Contains PocketAccountInterface.
  */
 
 namespace Drupal\fluxpocket\Plugin\Service;

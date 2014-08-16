@@ -8,7 +8,7 @@
 namespace Drupal\fluxpocket\Plugin\Rules\EventHandler;
 
 /**
- * Event handler for New favorite Item
+ * Event handler for New favorite Item.
  */
 class PocketEventFavoriteHandler extends PocketEventHandlerBase {
 
@@ -41,7 +41,7 @@ class PocketEventFavoriteHandler extends PocketEventHandlerBase {
     $account = entity_load_single('fluxservice_account', $settings['account']);
     if ($settings['account'] && $account) {
       return t('New favorite item in the Pocket of %account.', array(
-          '%account' => "{$account->label()}"
+          '%account' => "{$account->label()}",
       ));
     }
     return $this->eventInfo['label'];

@@ -33,7 +33,7 @@ class RemoveTag extends RetrieveBase {
         'tags' => array(
           'type' => 'text',
           'label' => t('List of tags to be removed'),
-          'description' => t('List of tags, seperated by comma (,)'),
+          'description' => t('List of tags, separated by comma (,)'),
         ),
         'account' => static::getAccountParameterInfo(),
       ),
@@ -49,7 +49,7 @@ class RemoveTag extends RetrieveBase {
     // Getting Tag List.
     $tag_ar = explode(",", $tags);
 
-    // Trimming spaces from array list
+    // Trimming spaces from array list.
     $tag_ar = array_filter(array_map('trim', $tag_ar));
 
     $item_id = RetrieveBase::getItemIdFromUrl($client, $page_url);

@@ -33,7 +33,7 @@ class AddUrl extends RulesPluginHandlerBase implements \RulesActionHandlerInterf
         'tags' => array(
           'type' => 'text',
           'label' => t('List of tags'),
-          'description' => t('List of tags seperated by comma (,)'),
+          'description' => t('List of tags separated by comma (,)'),
           'optional' => TRUE,
         ),
         'account' => static::getAccountParameterInfo(),
@@ -55,7 +55,7 @@ class AddUrl extends RulesPluginHandlerBase implements \RulesActionHandlerInterf
     $tag_ar = array_filter(array_map('trim', $tag_ar));
     $link_info = array(
       'url'       => $page_url,
-      'tags'      => $tag_ar
+      'tags'      => $tag_ar,
     );
 
     $pockpack_q = new PockpackQueue();
