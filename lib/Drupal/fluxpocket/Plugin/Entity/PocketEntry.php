@@ -79,7 +79,6 @@ class PocketEntry extends RemoteEntity implements PocketEntryInterface {
       'type' => 'text',
     );
 
-
     $info['resolved_title'] = array(
       'label' => t('Resolved Title'),
       'description' => t('The Resolved Title for the entry by Pocket'),
@@ -95,7 +94,7 @@ class PocketEntry extends RemoteEntity implements PocketEntryInterface {
     $info['tags'] = array(
       'label' => t('Tags'),
       'description' => t('A collection of tags associated with the particular entry.'),
-      'type' => 'list<text>'
+      'type' => 'list<text>',
     );
 
     $info['favorite'] = array(

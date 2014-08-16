@@ -45,17 +45,18 @@ class RemoveTag extends RetrieveBase {
    */
   public function execute($page_url, $tags, PocketAccountInterface $account) {
     $client = $account->client();
-    //Structuring the array of tags to be added
-    //Getting Tag List
-    $tag_ar = explode(",",$tags);
-    //Trimming spaces from array list
+    // Structuring the array of tags to be added.
+    // Getting Tag List.
+    $tag_ar = explode(",", $tags);
+
+    // Trimming spaces from array list
     $tag_ar = array_filter(array_map('trim', $tag_ar));
 
     $item_id = RetrieveBase::getItemIdFromUrl($client, $page_url);
 
     $tag_info = array(
       'item_id'   => $item_id,
-      'tags'      => $tag_ar
+      'tags'      => $tag_ar,
     );
 
     $pockpack_q = new PockpackQueue();

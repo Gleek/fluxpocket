@@ -40,8 +40,8 @@ class PocketFavoriteTask extends PocketEntryTaskBase {
   /**
    * {@inheritdoc}
    */
-  protected function getTime($entries){
-    return intval($entries['time_favorited'])+1;
+  protected function getTime($entries) {
+    return intval($entries['time_favorited']) + 1;
   }
 
 }

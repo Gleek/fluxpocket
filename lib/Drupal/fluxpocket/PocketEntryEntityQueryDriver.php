@@ -30,6 +30,7 @@ class PocketEntryEntityQueryDriver extends RangeRemoteEntityQueryDriverBase {
    * Make a request.
    *
    * @return array
+   *  The response received, containing the items in Pocket.
    */
   protected function makeRequest() {
     $response = $this->getAccount()->client()->retrieve($this->requestParameter);

@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains ArchiveUrl
+ * Contains ArchiveUrl.
  */
 
 namespace Drupal\fluxpocket\Plugin\Rules\Action;

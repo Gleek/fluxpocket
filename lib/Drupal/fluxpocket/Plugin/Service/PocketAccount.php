@@ -5,7 +5,6 @@
  * Contains PocketAccount.
  */
 
-
 namespace Drupal\fluxpocket\Plugin\Service;
 
 use Drupal\fluxpocket\Tasks\Exception;
@@ -41,19 +40,20 @@ class PocketAccount extends Account implements PocketAccountInterface {
     $store = fluxservice_tempstore("fluxservice.account.{$this->bundle()}");
     $store->setIfNotExists($this->identifier(), $this);
     $plugin = $this->identifier();
-    //Using API to request token
+
+    // Using API to request token.
     $pock_auth = new PockpackAuth();
     $request_token = $pock_auth->connect($key);
     $_SESSION['fluxpocket-api'] = array(
       'request_token' => $request_token,
-      'consumer_key' => $key
+      'consumer_key' => $key,
     );
     unset($_GET['destination']);
     drupal_goto($path = "https://getpocket.com/auth/authorize?request_token={$request_token}&redirect_uri={$redirect}");
   }
 
   /**
-   * Loads Account for OAuth
+   * Loads Account for OAuth.
    *
    * @param string $key Consumer Key of the app
    * @param $plugin Plugin for the particular service
@@ -66,10 +66,10 @@ class PocketAccount extends Account implements PocketAccountInterface {
   /**
    * Builds the URL to redirect to after visiting pocket for authentication.
    *
-   *
    * @return string
    *   The URL to redirect to after visiting the pocket OAauth endpoint for
    *   requesting access privileges from a user.
+   *
    */
   protected function getRedirectUrl() {
     return url("fluxservice/oauth/{$this->bundle()}/{$this->identifier()}", array('absolute' => TRUE));
@@ -82,7 +82,7 @@ class PocketAccount extends Account implements PocketAccountInterface {
     $service = $this->getService();
     return PocketClient::factory(array(
         'client_id' => $service->getConsumerKey(),
-        'access_token' => $this->getAccessToken()
+        'access_token' => $this->getAccessToken(),
     ));
   }
 
@@ -115,7 +115,7 @@ class PocketAccount extends Account implements PocketAccountInterface {
     $request_token = $_SESSION['fluxpocket-api']['request_token'];
     $client = new PockPackAuth();
     $data = $client->receiveTokenAndUsername($key, $request_token);
-    $this->data->set('access_token',$data['access_token']);
+    $this->data->set('access_token', $data['access_token']);
     $_SESSION['fluxpocket-api']['access_token'] = $data['access_token'];
     $this->processAuthorizedAccount($data);
 
@@ -132,11 +132,12 @@ class PocketAccount extends Account implements PocketAccountInterface {
   }
 
   /**
-   * Returns access token after authorization
+   * Returns access token after authorization.
    *
-   * @return string Access token for the session
+   * @return string
+   *   Access token for the session
    */
-  public function getAccessToken(){
+  public function getAccessToken() {
     return $this->data->get('access_token');
   }
 

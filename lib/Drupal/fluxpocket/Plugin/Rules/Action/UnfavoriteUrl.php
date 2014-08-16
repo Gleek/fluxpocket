@@ -13,7 +13,7 @@ use Drupal\fluxpocket\Rules\RulesPluginHandlerBase;
 use Duellsy\Pockpack\PockpackQueue;
 
 /**
- * Action for Unfavoriting Url
+ * Action for Unfavoriting Url.
  */
 class UnfavoriteUrl extends RetrieveBase {
 

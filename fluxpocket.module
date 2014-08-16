@@ -16,7 +16,7 @@ function fluxpocket_fluxservice_plugin_directory() {
  * Implements hook_rules_category_info().
  */
 function fluxpocket_rules_category_info() {
-  $info =  array();
+  $info = array();
   // Use the same icon as for the service plugin.
   $info['fluxpocket'] = array(
     'label' => t('Pocket'),

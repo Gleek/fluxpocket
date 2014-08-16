@@ -19,7 +19,7 @@ class PocketArchiveTask extends PocketEntryTaskBase {
     $arguments = array(
       'state'         => 'archive',
       'detailType'    => 'complete',
-      'sort'          => 'oldest'
+      'sort'          => 'oldest',
     );
     // We store the remote identifier of the last Pocket Entry that was
     // processed so that we can benefit from the 'since_id' query argument.
@@ -39,7 +39,7 @@ class PocketArchiveTask extends PocketEntryTaskBase {
   /**
    * {@inheritdoc}
    */
-  protected function getTime($entries){
-    return intval($entries['time_read'])+1;
+  protected function getTime($entries) {
+    return intval($entries['time_read']) + 1;
   }
 }

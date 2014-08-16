@@ -10,7 +10,7 @@ namespace Drupal\fluxpocket\Plugin\Rules\EventHandler;
 use Drupal\fluxpocket\Plugin\Service\PocketAccountInterface;
 
 /**
- * Event handler for updation of url to pocket
+ * Event handler for updation of url to pocket.
  */
 class PocketEventUpdateHandler extends PocketEventHandlerBase {
 
@@ -43,7 +43,7 @@ class PocketEventUpdateHandler extends PocketEventHandlerBase {
     $account = entity_load_single('fluxservice_account', $settings['account']);
     if ($settings['account'] && $account) {
       return t('A new Entry updated on the Pocket of %account.', array(
-          '%account' => "{$account->label()}"
+          '%account' => "{$account->label()}",
       ));
     }
     return $this->eventInfo['label'];

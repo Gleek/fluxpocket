@@ -13,7 +13,7 @@ use Drupal\fluxpocket\Rules\RulesPluginHandlerBase;
 use Duellsy\Pockpack\PockpackQueue;
 
 /**
- * Action to add URL to favorites
+ * Action to add URL to favorites.
  */
 class FavoriteUrl extends RetrieveBase {
 

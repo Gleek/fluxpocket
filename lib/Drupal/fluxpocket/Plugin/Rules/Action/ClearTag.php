@@ -40,8 +40,8 @@ class ClearTag extends RetrieveBase {
    */
   public function execute($page_url, PocketAccountInterface $account) {
     $client = $account->client();
-    //Structuring the array of url to be added
 
+    // Structuring the array of url to be added.
     $item_id = RetrieveBase::getItemIdFromUrl($client, $page_url);
 
     $pockpack_q = new PockpackQueue();

@@ -7,7 +7,7 @@
 
 namespace Drupal\fluxpocket\Tasks;
 /**
- * Pocket Task handler for handling new entries
+ * Pocket Task handler for handling new entries.
  */
 class PocketAddTask extends PocketTaskBase {
 
@@ -25,17 +25,16 @@ class PocketAddTask extends PocketTaskBase {
 
     $entries = $this->getList($account, $arguments, $time);
 
-    //1 is added inorder to skip the latest entry
+    // 1 is added inorder to skip the latest entry
     $updated_time = intval(end($entries)['time_updated']) + 1;
 
-    if ( $entries ) {
+    if ($entries) {
       $entries = fluxservice_entify_multiple($entries, 'fluxpocket_entry', $account);
       foreach ($entries as $entry) {
         rules_invoke_event($this->getEvent(), $account, $entry);
       }
 
       // Store the timestamp of the last item that was processed.
-      //$last = end($entries);
       $store->set($this->task['identifier'], $updated_time);
     }
     elseif (empty($arguments['since'])) {
@@ -71,21 +70,21 @@ class PocketAddTask extends PocketTaskBase {
   }
 
   /**
-   *Retrieves the List for the particular task
-   *
+   * Retrieves the List for the particular task.
    */
-  protected function getList($account, $arguments, $time=null){
+  protected function getList($account, $arguments, $time = NULL){
     $response = $account->client()->retrieve($arguments);
 
-    //Converting to array (encoding the object as json and then decoding as array)
-    $entries = json_decode (json_encode ($response->{'list'}), true);
+    // Converting to array by
+    // encoding the object as json and then decoding as array.
+    $entries = json_decode(json_encode($response->{'list'}), TRUE);
 
-    //Editing tags for easy parsing
+    // Editing tags for easy parsing
     $tags = array();
 
-    foreach($entries as $index => $elements) {
-      if ( isset($entries[$index]['tags']) ) {
-        foreach($entries[$index]['tags'] as $tag => $name) {
+    foreach ($entries as $index => $elements) {
+      if (isset($entries[$index]['tags'])) {
+        foreach ($entries[$index]['tags'] as $tag => $name) {
           array_push($tags,$tag);
         }
       }
@@ -93,7 +92,7 @@ class PocketAddTask extends PocketTaskBase {
       $tags = array();
     }
 
-    //Filtering out entries which are created before the updated time
+    // Filtering out entries which are created before the updated time.
     if ($time) {
       foreach ($entries as $index => $elements) {
         if ($entries[$index]['time_added'] < $time) {

@@ -47,8 +47,8 @@ Rules Provided
 ###Action###
   - **Add url along with tags** : Addition of URL to Pocket. Optionally you can also provide tags
   - **Delete URL** : Deletion of URL from Pocket
-  - **Archive / Unarchive URL** : Two seperate actions are provided for archiving purpose.
-  - **Favorite / Unfavorite URL** : Two seperate actions are provided for favorite purpose
+  - **Archive / Unarchive URL** : Two separate actions are provided for archiving purpose.
+  - **Favorite / Unfavorite URL** : Two separate actions are provided for favorite purpose
   - **Adding Tags** : Action Add tags to an entry in the already existing tags.
   - **Replacing Tags** : Replace tags of an entry with new provided tags.
   - **Clearing Tags**: Clear all tags of an entry
@@ -90,10 +90,10 @@ Rules Provided
 - **Restrict by Type**: Article
 **Action** (Add URL to pocket)
 - **URL** : node:url
-- **Tags** : \<Comma seperated tags, if any\>
+- **Tags** : \<Comma separated tags, if any\>
 - **Pocket Account** : \<Select your e-mail address\>
 
-Similarly a rule can be added to delete or archive url in pocket everytime an Article is deleted on a drupal site.
+Similarly a rule can be added to delete or archive url in pocket every time an Article is deleted on a drupal site.
 
 ####Tweeting about your favorite articles in Pocket (also involves fluxtwitter)####
 **Event**

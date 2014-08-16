@@ -17,7 +17,7 @@ use Drupal\fluxpocket\Rules\RulesPluginHandlerBase;
 abstract class RetrieveBase extends RulesPluginHandlerBase implements \RulesActionHandlerInterface {
 
   /**
-   * Convert page url to the item id stored in Pocket
+   * Convert page url to the item id stored in Pocket.
    * @param object $client
    *    Object to connect to Pocket services.
    * @param string|null $page_url
@@ -34,7 +34,8 @@ abstract class RetrieveBase extends RulesPluginHandlerBase implements \RulesActi
     'detailType'    => 'simple'
     );
     $list = $client->retrieve($options);
-    //Calculate the item_id for the url
+
+    // Calculate the item_id for the url.
     $id = NULL;
     foreach ($list->{'list'} as $index => $elements) {
       if ($list->{'list'}->$index->{'given_url'} == $page_url) {

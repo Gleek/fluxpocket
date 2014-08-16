@@ -46,10 +46,12 @@ class AddUrl extends RulesPluginHandlerBase implements \RulesActionHandlerInterf
    */
   public function execute($page_url, $tags, PocketAccountInterface $account) {
     $client = $account->client();
-    //Structuring the array of url to be added
-    //Getting Tag List
-    $tag_ar = explode(",",$tags);
-    //Trimming spaces from array list
+
+    // Structuring the array of url to be added.
+    // Getting Tag List.
+    $tag_ar = explode(",", $tags);
+
+    // Trimming spaces from array list.
     $tag_ar = array_filter(array_map('trim', $tag_ar));
     $link_info = array(
       'url'       => $page_url,

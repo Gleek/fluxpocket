@@ -25,7 +25,7 @@ class PocketEntryController extends RemoteEntityControllerByAccount {
     $client = $account->client();
     $response = $client->retrieve(array(
                   'state' => 'all',
-                  'detailType' => 'simple'
+                  'detailType' => 'simple',
                 ));
     foreach ($ids as $id) {
       $url = $response->{'list'}->$id->{'given_url'};
