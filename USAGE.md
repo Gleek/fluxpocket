@@ -12,6 +12,7 @@ Installation
   - Entity API
   - Composer Manager
   - xautoload-7.x-4.x-dev
+  - Views
 
 - Install Module
   - `git clone https://github.com/Gleek/fluxpocket.git` in the `/sites/all/modules`
@@ -64,20 +65,20 @@ Rules Provided
 
 ### List of Variables provided by Events ###
 
-|Token                   | Type         | Description                                |
-|------------------------|--------------|--------------------------------------------|
-| [pocket:item-id]	     | Integer      |   The unique remote identifier of the Entry.  - `12345`|
-| [pocket:time-added]    | Integer	    |   The Unix timestamp for when the URL was added.  -`1407491922`|
-| [pocket:time-updated]	 | Integer      |   The timestamp for when the URL was updated.  `1407491922` |
-| [pocket:given-url]	 | Text         |   The Given URL for the entry.  `drupal.org`|
-| [pocket:resolved-url]	 | Text         |   The URL for the entry, after being resolved by Pocket : `https://www.drupal.org/`|
-| [pocket:given-title]   | Text         |	The Given Title for the entry : `My favorite page`|
-| [pocket:resolved-title]| Text         |	The Resolved Title for the entry by Pocket : `Drupal - Open Source CMS | Drupal.org`|
+|Token                   | Type         | Description                                                                                |
+|------------------------|--------------|--------------------------------------------------------------------------------------------|
+| [pocket:item-id]	     | Integer      |   The unique remote identifier of the Entry.  - `12345`                                    |
+| [pocket:time-added]    | Integer	    |   The Unix timestamp for when the URL was added.  -`1407491922`                            |
+| [pocket:time-updated]	 | Integer      |   The timestamp for when the URL was updated.  `1407491922`                                |
+| [pocket:given-url]	 | Text         |   The Given URL for the entry.  `drupal.org`                                               |
+| [pocket:resolved-url]	 | Text         |   The URL for the entry, after being resolved by Pocket : `https://www.drupal.org/`        |
+| [pocket:given-title]   | Text         |	The Given Title for the entry : `My favorite page`                                       |
+| [pocket:resolved-title]| Text         |	The Resolved Title for the entry by Pocket : `Drupal - Open Source CMS `\|` Drupal.org`  |
 | [pocket:excerpt]       | Text         |   The first few lines of the item (articles only) : `Drupal is an open source content management platform powering millions of websites and applications. It’s built, used, and supported by an active and diverse community of people around the world.`|
-| [pocket:tags]	         | List of Text |   A collection of tags associated with the particular entry. :`"tag1","tag2"`|
-| [pocket:favorite]		 | Integer      |   Indicates whether the URL is added to favorites or not :`1` if favorite ,`0` if not |
+| [pocket:tags]	         | List of Text |   A collection of tags associated with the particular entry. :`"tag1","tag2"`              |
+| [pocket:favorite]		 | Integer      |   Indicates whether the URL is added to favorites or not :`1` if favorite ,`0` if not      |
 | [pocket:status]		 | Integer      |   Indicates whether the URL is added to Archives or is set for deletion: `1` if archived `2` if should be deleted |
-| [pocket:is-article]	 | Integer      |	Indicates whether the URL is an article or not: `1` if article `0` if not |
+| [pocket:is-article]	 | Integer      |	Indicates whether the URL is an article or not: `1` if article `0` if not                |
 | [pocket:has-image]	 | Integer      |	Indicates whether Pocket detects image on the page or not `1` if image found, `0` if not |
 | [pocket:has-video]     | Integer	    |	Indicates whether Pocket detects video on the page or not `1` if image found, `0` if not |
 | [pocket:word-count]	 | Integer	    |   Gives the word count of the article : `1021`|
