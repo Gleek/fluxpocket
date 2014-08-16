@@ -11,7 +11,7 @@ Installation
   - Universally Unique ID
   - Entity API
   - Composer Manager
-  - X Autoload 7.x-3.6
+  - xautoload-7.x-4.x-dev
 
 - Install Module
   - `git clone https://github.com/Gleek/fluxpocket.git` in the `/sites/all/modules`
@@ -88,6 +88,7 @@ Rules Provided
 **Event**
 - **React on Rule** : After saving new content
 - **Restrict by Type**: Article
+
 **Action** (Add URL to pocket)
 - **URL** : node:url
 - **Tags** : \<Comma separated tags, if any\>
@@ -99,6 +100,7 @@ Similarly a rule can be added to delete or archive url in pocket every time an A
 **Event**
 - **React on Rule** : A URL is added to favorites in Pocket
 - **Account** : \<Select your email id from the list\>
+
 **Action** (Tweet)
 - **Value**: \[pocket:given-url] <any other text\>
 - **Account**: \<Select your tweet handle\>
