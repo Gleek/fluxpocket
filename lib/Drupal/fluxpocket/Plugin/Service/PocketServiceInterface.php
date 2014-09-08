@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains LinkedInServiceInterface
+ * Contains LinkedInServiceInterface.
  */
 
 namespace Drupal\fluxpocket\Plugin\Service;

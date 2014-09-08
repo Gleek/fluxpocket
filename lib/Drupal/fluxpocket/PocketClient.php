@@ -3,6 +3,7 @@
  * @file
  * Contains PocketClient.
  */
+
 namespace Drupal\fluxpocket;
 
 use Guzzle\Common\Collection;
@@ -17,11 +18,13 @@ use Duellsy\Pockpack\Pockpack;
 class PocketClient extends Client {
 
   /**
-   * Returns the Pockpack object which is used as base for interaction
+   * Returns the Pockpack object which is used as base for interaction.
    *
-   * @param array $config array storing client id and access_token
+   * @param array $config
+   *   Array storing client id and access_token.
    *
-   * @return object $client Object used as base for interaction with Pocket
+   * @return object $client
+   *   Object used as base for interaction with Pocket
    */
   public static function factory($config = array()) {
     $consumer_key = $config['client_id'];

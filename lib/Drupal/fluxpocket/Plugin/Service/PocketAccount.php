@@ -55,8 +55,11 @@ class PocketAccount extends Account implements PocketAccountInterface {
   /**
    * Loads Account for OAuth.
    *
-   * @param string $key Consumer Key of the app
-   * @param $plugin Plugin for the particular service
+   * @param string $key
+   *   Consumer Key of the app
+   *
+   * @param $plugin
+   *   Plugin for the particular service
    */
   public static function getAccountForOAuthCallback($key, $plugin) {
     $store = fluxservice_tempstore("fluxservice.account.{$plugin}");

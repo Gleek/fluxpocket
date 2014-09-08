@@ -33,8 +33,8 @@ abstract class RetrieveBase extends RulesPluginHandlerBase implements \RulesActi
       return NULL;
     }
     $options = array(
-    'state'         => 'all',
-    'detailType'    => 'simple',
+      'state'         => 'all',
+      'detailType'    => 'simple',
     );
     $list = $client->retrieve($options);
 

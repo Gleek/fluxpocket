@@ -43,9 +43,9 @@ class PocketService extends OAuthServiceBase implements PocketServiceInterface {
    * Structure of form for the Pocket Service.
    *
    * @param array $form_state
-   *
+   *   Contains the initial form
    * @return array $form
-   * form to be displayed in the services window
+   *   Form to be displayed in the services window.
    */
   public function settingsForm(array &$form_state) {
     $form['help'] = array(
