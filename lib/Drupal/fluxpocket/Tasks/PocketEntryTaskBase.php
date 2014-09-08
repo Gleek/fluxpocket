@@ -76,7 +76,7 @@ abstract class PocketEntryTaskBase extends PocketTaskBase {
    * @return string
    *    The timestamp after which the entries are retrieved
    */
-  abstract protected function getTime(array $entries);
+  abstract protected function getTime($entries);
 
   /**
    * Retrieves the request arguments based on the event configuration.
