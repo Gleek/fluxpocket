@@ -4,4 +4,5 @@ package = fluxkraft
 core = 7.x
 php = 5.3
 dependencies[] = fluxservice
-dependencies[] = rules_scheduler
+dependencies[] = rules
+dependencies[] = views
