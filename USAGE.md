@@ -115,4 +115,4 @@ Similarly a rule can be added to delete or archive url in pocket every time an A
 - Favorite bookmarked file link in pocket is added to dropbox (requires fluxdropbox)
 - Create a facebook post with what you just favorited in pocket
 
-*Many other services can be implemented which may require seperarate fluxservices. Find more of them on [fluxservices drupal page](https://www.drupal.org/project/fluxservice)*
+*Many other services can be implemented which may require separate fluxservices. Find more of them on [fluxservices drupal page](https://www.drupal.org/project/fluxservice)*
